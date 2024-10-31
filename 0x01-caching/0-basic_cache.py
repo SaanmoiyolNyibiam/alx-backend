@@ -12,6 +12,13 @@ class BasicCache(BaseCaching):
     chaching system
     """
 
+    def __init__(self):
+        """
+        Initializes the baseclass that this
+        class in inheriting from
+        """
+        super().__init__()
+
     def put(self, key, item):
         """
         Must assign to the dictionary self.cache_data the
