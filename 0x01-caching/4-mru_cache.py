@@ -31,7 +31,15 @@ def call_count(method: Callable) -> Callable:
                 self.priority_list.pop(0)
                 self.priority_list.append(key)
         else:
-            self.priority_list.append(key)
+            if key in self.priority_list:
+                idx = self.priority_list.index(key)
+                while idx < p_list_len - 1:
+                    temp = self.priority_list[idx]
+                    self.priority_list[idx] = self.priority_list[idx + 1]
+                    self.priority_list[idx + 1] = temp
+                    idx += 1
+            else:
+                self.priority_list.append(key)
 
         return method(self, *args)
     return wrapper
@@ -83,7 +91,7 @@ class MRUCache(BaseCaching):
     def update_p_list(self, key):
         """
         Updates the priority list after the put method
-        is being called
+        is being called, instead of before the call.
         """
         return key
 
