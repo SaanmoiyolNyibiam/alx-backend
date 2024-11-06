@@ -35,7 +35,7 @@ def index():
     """
     This is a function that returns the index page of the application
     """
-    return render_template("2-index.html")
+    return render_template("3-index.html")
 
 
 if __name__ == "__main__":
