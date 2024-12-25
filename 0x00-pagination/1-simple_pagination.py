@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 """
 This is a module that defines a class that paginates a database
 """
