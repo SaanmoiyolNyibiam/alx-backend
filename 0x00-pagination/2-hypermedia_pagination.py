@@ -89,5 +89,5 @@ class Server:
             'data': data_set,
             'next_page': next_page_idx,
             'prev_page': prev_page_idx,
-            'total_pages_': pages
+            'total_pages': pages
         }
